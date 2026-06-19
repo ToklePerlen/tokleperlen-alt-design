@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NO*TOKLEPERLEN - Sibirkatteoppdrett</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="#" class="logo">NO*TOKLEPERLEN</a>
+            <div class="nav-links">
+                <a href="#hjem">Hjem</a>
+                <a href="#om-rasen">Om Rasen</a>
+                <a href="#kattene">Kattene Våre</a>
+                <a href="#kattunger">Kattunger</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Meny" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="#hjem">Hjem</a>
+        <a href="#om-rasen">Om Rasen</a>
+        <a href="#kattene">Kattene Våre</a>
+        <a href="#kattunger">Kattunger</a>
+        <a href="#kontakt">Kontakt</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hjem" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <p class="eyebrow">Sibirkatteoppdrett</p>
+            <h1>NO*Tokleperlen</h1>
+            <p class="subtitle">Allergivennlige sibirkatter, avlet med ro, omtanke og blikk for rasens vakre uttrykk.</p>
+            <p class="hero-desc">Et dedikert oppdrett drevet av Siri Tokle. Her møter du kattene, planlagte kull og praktisk informasjon før du tar kontakt.</p>
+            <div class="hero-buttons">
+                <a href="#kattene" class="btn btn-primary">Møt Kattene</a>
+                <a href="#om-rasen" class="btn btn-secondary">Om Rasen</a>
+            </div>
+            <div class="hero-notes" aria-label="Kort informasjon">
+                <span>Allergivennlig rase</span>
+                <span>Personlig oppdrett</span>
+                <span>Venteliste ved planlagte kull</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Breed Section -->
+    <section id="om-rasen" class="section about-breed">
+        <div class="container grid-2">
+            <div class="about-content reveal-left">
+                <p class="section-kicker">Om rasen</p>
+                <h2>En allergivennlig skjønnhet</h2>
+                <div class="divider"></div>
+                <p>Sibirkatten er en allergivennlig katterase som har sitt opphav fra Sibir i Russland. Rasen er kjent for sitt vakre utseende og sin unike personlighet, preget av et godt lynne.</p>
+                <p>At den er allergivennlig betyr at mange som er allergiske mot katter, kan tåle sibirkatter. Dette skyldes at de produserer mindre av proteinet Fel d1, som ofte utløser allergiske reaksjoner. Men husk: ikke alle katteallergikere tåler sibirkatten, så det er viktig å teste seg først.</p>
+                <a href="https://www.sibirkattensvenner.no/?page_id=85" target="_blank" rel="noopener noreferrer" class="text-link">Bestill allergitesting hos Sibirkattens Venner &rarr;</a>
+            </div>
+            <div class="about-image reveal-right">
+                <div class="image-wrapper">
+                    <img src="assets/hero.jpg" alt="Sibirkatt med lang pels">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Cats Section -->
+    <section id="kattene" class="section our-cats bg-darker">
+        <div class="container text-center">
+            <p class="section-kicker reveal-up">Kattegalleriet</p>
+            <h2 class="reveal-up">Kattene i Oppdrettet</h2>
+            <div class="divider center"></div>
+            <p class="section-subtitle reveal-up">Møt våre tre fantastiske sibirkatter som danner grunnlaget for vårt oppdrett.</p>
+            
+            <div class="cat-grid">
+                <!-- Cat 1 -->
+                <div class="cat-card reveal-up" style="transition-delay: 100ms;">
+                    <div class="cat-image">
+                        <img src="assets/female1.jpg" alt="Female Cat 1">
+                        <div class="cat-overlay">
+                            <span class="cat-gender">Hunnkatt</span>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Milla</h3>
+                        <p>Vår vakre sølvgrå dronning med et mildt og kjærlig vesen.</p>
+                    </div>
+                </div>
+
+                <!-- Cat 2 -->
+                <div class="cat-card reveal-up" style="transition-delay: 200ms;">
+                    <div class="cat-image">
+                        <img src="assets/female2.jpg" alt="Female Cat 2">
+                        <div class="cat-overlay">
+                            <span class="cat-gender">Hunnkatt</span>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Bella</h3>
+                        <p>Den lekne og nysgjerrige tabbyen med et hjerte av gull.</p>
+                    </div>
+                </div>
+
+                <!-- Cat 3 -->
+                <div class="cat-card reveal-up" style="transition-delay: 300ms;">
+                    <div class="cat-image">
+                        <img src="assets/male.jpg" alt="Male Cat">
+                        <div class="cat-overlay">
+                            <span class="cat-gender male">Hannkatt</span>
+                        </div>
+                    </div>
+                    <div class="cat-info">
+                        <h3>Leo</h3>
+                        <p>Vår majestetiske hannkatt. En ekte gentleman med et rolig temperament.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kittens Section -->
+    <section id="kattunger" class="section kittens">
+        <div class="container">
+            <div class="cta-box reveal-up">
+                <p class="section-kicker">Neste steg</p>
+                <h2>Kattunger & Planlagte Kull</h2>
+                <p>Vi planlegger kull med jevne mellomrom. Ønsker du en sibirkatt fra NO*Tokleperlen?</p>
+                <div class="cta-buttons">
+                    <a href="#kontakt" class="btn btn-primary">Ta kontakt for venteliste</a>
+                    <a href="https://www.sibirkattensvenner.no/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Les om rasen</a>
+                </div>
+            </div>
+
+            <!-- Subtle Partner / Advertisement Section -->
+            <div class="partner-ad reveal-up" style="transition-delay: 200ms;">
+                <div class="partner-content">
+                    <span class="partner-badge">Anbefalt Partner</span>
+                    <h3>Klar for en ny pus i huset?</h3>
+                    <p>Vi anbefaler <strong>TinyPaws</strong> for alt du trenger av kvalitetsutstyr og leker til din nye sibirkatt.</p>
+                </div>
+                <div class="partner-cta">
+                    <a href="https://tinypaws.no/?utm_source=tokleperlen&utm_medium=website&utm_campaign=partner_ad" target="_blank" rel="noopener noreferrer" class="btn btn-outline track-ad-click" data-ad-name="TinyPaws">
+                        Besøk TinyPaws &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontakt" class="footer">
+        <div class="container grid-3">
+            <div class="footer-brand">
+                <h3>NO*TOKLEPERLEN</h3>
+                <p>Katteoppdrett av den allergivennlige rasen sibirkatt. Drives med kjærlighet av Siri Tokle.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Hurtiglenker</h4>
+                <ul>
+                    <li><a href="#hjem">Hjem</a></li>
+                    <li><a href="#om-rasen">Om Rasen</a></li>
+                    <li><a href="#kattene">Kattene Våre</a></li>
+                    <li><a href="#kattunger">Kattunger</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Kontakt</h4>
+                <p>Siri Tokle</p>
+                <p><a href="mailto:post@tokleperlen.no">Send oss en e-post</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 NO*Tokleperlen. Alle rettigheter reservert.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
