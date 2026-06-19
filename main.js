@@ -2,66 +2,60 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
 
     // 2. Mobile Menu Toggle
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+    const firstMenuLink = mobileMenu.querySelector('a');
 
-    function toggleMenu() {
-        mobileBtn.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-        const isOpen = mobileMenu.classList.contains('active');
-        mobileBtn.setAttribute('aria-expanded', String(isOpen));
-        document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    function openMenu() {
+        mobileBtn.classList.add('active');
+        mobileMenu.classList.add('active');
+        mobileBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        firstMenuLink?.focus();
     }
 
-    mobileBtn.addEventListener('click', toggleMenu);
+    function closeMenu() {
+        mobileBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        mobileBtn.focus();
+    }
 
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', toggleMenu);
+    mobileBtn.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('active')) closeMenu();
+        else openMenu();
     });
 
-    // 3. Scroll Reveal Animations
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-up');
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-    function reveal() {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 100; // when to reveal element
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu();
+    });
 
-        revealElements.forEach(el => {
-            const elementTop = el.getBoundingClientRect().top;
-            if (elementTop < windowHeight - elementVisible) {
-                el.classList.add('active');
+    // 3. Scroll Reveal via IntersectionObserver (zero cost after each element reveals)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
             }
         });
-    }
+    }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
-    // Trigger reveal on load and scroll
-    window.addEventListener('scroll', reveal);
-    reveal(); // Initial call
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-up')
+        .forEach(el => observer.observe(el));
 
-    // 4. Ad Tracking Logic
-    const adLinks = document.querySelectorAll('.track-ad-click');
-    
-    adLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
+    // 4. Ad Tracking
+    document.querySelectorAll('.track-ad-click').forEach(link => {
+        link.addEventListener('click', () => {
             const adName = link.getAttribute('data-ad-name');
-            const targetUrl = link.getAttribute('href');
-            
-            // Example of sending tracking data to a hypothetical analytics endpoint
-            // navigator.sendBeacon('/api/track-click', JSON.stringify({ ad: adName, timestamp: Date.now() }));
-            
-            console.log(`[Ad Tracker] Clicked on: ${adName}. Redirecting to ${targetUrl}`);
-            
-            // Note: We don't prevent default here because we want the browser to open the link natively in the new tab (_blank).
-            // If it wasn't a new tab, we might prevent default, track, then redirect.
+            // navigator.sendBeacon('/api/track-click', JSON.stringify({ ad: adName }));
+            console.log(`[Ad Tracker] Clicked: ${adName}`);
         });
     });
 });

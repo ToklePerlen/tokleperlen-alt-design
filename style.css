@@ -11,6 +11,9 @@
     --muted: #7c7365;
     --brass: #b88a31;
     --brass-deep: #7f5f1f;
+    --brass-light: #d1a245;
+    --brass-hover: #f3d59a;
+    --brass-gold: #e0b75d;
     --charcoal: #111111;
     --charcoal-2: #1b1916;
     --cream: #fff7e8;
@@ -69,7 +72,7 @@ h6 {
     font-family: var(--font-display);
     color: var(--ink);
     font-weight: 600;
-    line-height: 0.98;
+    line-height: 1.05;
     letter-spacing: 0;
 }
 
@@ -77,6 +80,7 @@ h1 {
     color: var(--cream);
     font-size: clamp(4.1rem, 8vw, 8.5rem);
     font-weight: 600;
+    line-height: 0.98;
     margin-bottom: 1rem;
     text-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
 }
@@ -222,7 +226,7 @@ p {
 }
 
 .btn-primary:hover {
-    background: #d1a245;
+    background: var(--brass-light);
     transform: translateY(-2px);
 }
 
@@ -321,7 +325,7 @@ p {
 }
 
 .nav-links a:hover {
-    color: #f3d59a;
+    color: var(--brass-hover);
 }
 
 .nav-links a:hover::after {
@@ -584,6 +588,11 @@ p {
     border-color: rgba(184, 138, 49, 0.56);
 }
 
+.cat-grid .cat-card:nth-child(1) { transition-delay: 100ms; }
+.cat-grid .cat-card:nth-child(2) { transition-delay: 200ms; }
+.cat-grid .cat-card:nth-child(3) { transition-delay: 300ms; }
+.cat-grid .cat-card.active { transition-delay: 0ms; }
+
 .cat-image {
     position: relative;
     overflow: hidden;
@@ -670,7 +679,7 @@ p {
 }
 
 .cta-box .section-kicker {
-    color: #e0b75d;
+    color: var(--brass-gold);
 }
 
 .cta-box p {
@@ -678,6 +687,19 @@ p {
     color: rgba(255, 247, 232, 0.86);
     margin-bottom: 2.3rem;
     max-width: 650px;
+}
+
+.status-line {
+    font-size: 0.94rem;
+    color: rgba(255, 247, 232, 0.68);
+    border-left: 2px solid rgba(224, 183, 93, 0.45);
+    padding-left: 0.85rem;
+    margin-bottom: 2.3rem;
+}
+
+.status-line strong {
+    color: var(--brass-gold);
+    font-weight: 700;
 }
 
 .cta-buttons {
@@ -701,7 +723,7 @@ p {
 
 .partner-badge {
     display: inline-block;
-    color: #e0b75d;
+    color: var(--brass-gold);
     margin-bottom: 0.45rem;
 }
 
@@ -766,7 +788,7 @@ p {
 }
 
 .footer a:hover {
-    color: #e0b75d;
+    color: var(--brass-gold);
 }
 
 .footer-contact p {
@@ -894,7 +916,18 @@ p {
     }
 
     .hero-notes {
-        display: none;
+        flex-direction: column;
+        gap: 0.45rem;
+        margin-top: 1.6rem;
+    }
+
+    .hero-notes span {
+        min-width: unset;
+        border-top: none;
+        border-left: 2px solid rgba(255, 247, 232, 0.32);
+        padding-top: 0;
+        padding-left: 0.7rem;
+        font-size: 0.88rem;
     }
 
     .scroll-indicator {
